@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Giphy</title>
     <style type="text/css">
         button,
         div,
@@ -14,25 +17,62 @@
         }
       </style>
 </head>
-<body>
+
+
+
+<body class="container">
+
+  <h1>Giphy</h1>
+
+  <div class="row">
+
+      <div class="col-md-6 panel panel-default ">   
+
+          <div class="panel-heading">      
+<h2>Instructions</h2>
+</div>
+
+<div class="panel-body">
+    Click on the buttons to display Gifts from the Giphy API. <br>
+    Add more buttons to play with.<br>
+    Click on the images to stop the animation.
+  </div>
+
+
+</div>
+
+    <div class="col-md-4">
+      <!-- Buttons will Get Dumped Dere -->
+  
+      <div id="animal-Buttons"></div>
+  
+       
+      <form id="animal-form">
+        <label for="animal-input">Add an Animal</label>
+        <input type="text" id="animal-input">
+        <br>
+  
+        <!-- Button triggers new animal to be added -->
+        <input class='btn btn-info' id="add-animal" type="submit" >
+  
+      </div>
 
     
-    <!-- Buttons will Get Dumped Dere -->
+    </div>
 
-    <div id="animal-Buttons"></div>
-
-     
-    <form id="animal-form">
-      <label for="animal-input">Add an Animal</label>
-      <input type="text" id="animal-input">
-      <br>
-
-      <!-- Button triggers new animal to be added -->
-      <input id="add-animal" type="submit" >
-
+    <div class="col-md-6">
       <!-- Animals will get dumped here -->
 
      <div id="animals-view"></div>
+
+    </div>
+   
+    
+  
+  
+
+
+
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript">
@@ -55,6 +95,8 @@
             var a = $('<button>');
   
             a.addClass('animal');
+
+            a.addClass('btn btn-primary')
   
              a.attr("data-name", animals[i]);
   
@@ -108,7 +150,7 @@ for (var i = 0; i < results.length; i++) {
 
   // Creating and storing a div tag
   var animalDiv = $("<div>");
-
+animalDiv.addClass("col-md-6")
   // Creating a paragraph tag with the result item's rating
   var p = $("<p>").text("Rating: " + results[i].rating);
 
@@ -151,9 +193,6 @@ for (var i = 0; i < results.length; i++) {
     });
     
        } );
-
-
-
       
       </script>
 </body>
