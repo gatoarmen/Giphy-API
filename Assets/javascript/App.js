@@ -1,4 +1,4 @@
-
+"use sttict"
        
 // Initial array of movies
 
